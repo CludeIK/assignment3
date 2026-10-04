@@ -1,0 +1,13 @@
+Starting Bridge Pattern Demonstration (Base Version)
+
+T1 PASS | BasicRemote + TvDevice | result=Remote ID: RMT-B1 executed -> TV [Power: ON, Volume: 30]
+T2 PASS | BasicRemote + RadioDevice | result=Remote ID: RMT-B2 executed -> Radio [Power: ON, Volume: 30]
+T3 PASS | QuietRemote + TvDevice | result=Remote ID: RMT-Q1 executed -> TV [Power: ON, Volume: 5]
+T4 PASS | QuietRemote + RadioDevice | result=Remote ID: RMT-Q2 executed -> Radio [Power: ON, Volume: 5]
+
+Executing T5: Runtime Implementation Switch
+T5 PASS | sameObject=true | stateUnchanged=true
+before=<Remote ID: RMT-B1 executed -> TV [Power: ON, Volume: 30]> | after=<Remote ID: RMT-B1 executed -> Radio [Power: ON, Volume: 30]>
+T6 PASS | BasicRemote + ProjectorDevice | result=Remote ID: RMT-B3 executed -> Projector [Power: ON, Volume: 30]
+T7 PASS | QuietRemote + ProjectorDevice | result=Remote ID: RMT-Q3 executed -> Projector [Power: ON, Volume: 5]
+SUMMARY: 7/7 PASS
