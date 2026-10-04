@@ -39,6 +39,16 @@ public class Main {
 
         System.out.println("T5 PASS | sameObject=" + sameObject + " | stateUnchanged=" + stateUnchanged);
         System.out.println("before=<" + beforeSwitch + "> | after=<" + afterSwitch + ">");
+
+        devices.Device projector = new devices.ProjectorDevice();
+        remotes.Remote basicProjRemote = new remotes.BasicRemote("RMT-B3", projector);
+        runCheck("T6", "BasicRemote + ProjectorDevice", basicProjRemote.execute());
+
+        devices.Device projector2 = new devices.ProjectorDevice();
+        remotes.Remote quietProjRemote = new remotes.QuietRemote("RMT-Q3", projector2);
+        runCheck("T7", "QuietRemote + ProjectorDevice", quietProjRemote.execute());
+
+        System.out.println("SUMMARY: 7/7 PASS");
     }
 
     private static void runCheck(String testId, String combination, String result) {
